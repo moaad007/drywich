@@ -28,6 +28,9 @@
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="myapp"/>
         <data android:scheme="com.moaadbahi.boltexponativewind"/>
+        <data android:scheme="exp+bolt-expo-nativewind"/>
+        <data android:scheme="com.Drywich.myapp"/>
+        <data android:scheme="exp+drywich"/>
       </intent-filter>
     </activity>
   </application>

@@ -1,37 +1,38 @@
 {
   "expo": {
-    "name": "bolt-expo-nativewind",
-    "slug": "bolt-expo-nativewind",
+    "name": "Drywich",
+    "slug": "Drywich",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "single",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router"
-    ],
-    "experiments": {
-      "typedRoutes": true
+    "android": {
+      "package": "com.Drywich.myapp",
+      "permissions": []
     },
     "extra": {
-      "router": {
-        "origin": false
-      },
       "eas": {
-        "projectId": "b8f53c83-f3c7-47d7-b5c9-ffc4641bec44"
+        "projectId": "2545b547-1a0f-4ce6-b184-41e248f69460"
       }
-    },
-    "android": {
-      "package": "com.moaadbahi.boltexponativewind"
     }
+  },
+  "web": {
+    "bundler": "metro",
+    "output": "single",
+    "favicon": "./assets/images/favicon.png"
+  },
+  "plugins": [
+    "expo-router"
+  ],
+  "experiments": {
+    "typedRoutes": true
+  },
+  "extra": {
+    "router": {
+      "origin": false
+    },
+    "eas": {
+      "projectId": "b8f53c83-f3c7-47d7-b5c9-ffc4641bec44"
+    }
+  },
+  "android": {
+    "package": "com.moaadbahi.boltexponativewind"
   }
 }

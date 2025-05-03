@@ -1,4 +1,4 @@
-package com.moaadbahi.boltexponativewind
+package com.Drywich.myapp
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
