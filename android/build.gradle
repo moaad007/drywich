@@ -7,7 +7,7 @@ buildscript {
         compileSdkVersion = 35
         targetSdkVersion = 34
         kotlinVersion = "1.9.24"
-        ndkVersion = "23.1.7779620" // Update this line
+        ndkVersion = "29.0.13113456"
     }
     repositories {
         google()
@@ -19,19 +19,30 @@ buildscript {
     }
 }
 
-apply plugin: "com.facebook.react.rootproject"
+apply plugin: "com.android.application"
+
+android {
+    compileSdkVersion compileSdkVersion // Use the value from the `ext` block
+    buildToolsVersion buildToolsVersion // Use the value from the `ext` block
+
+    defaultConfig {
+        applicationId "com.Drywich.myapp"
+        minSdkVersion minSdkVersion // Use the value from the `ext` block
+        targetSdkVersion targetSdkVersion // Use the value from the `ext` block
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
 
 allprojects {
     repositories {
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url(new File(['node', '--print', "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), '../android'))
-        }
-        maven {
-            // Android JSC is installed from npm
-            url(new File(['node', '--print', "require.resolve('jsc-android/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim(), '../dist'))
-        }
-
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }
