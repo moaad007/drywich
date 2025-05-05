@@ -22,13 +22,14 @@ buildscript {
 apply plugin: "com.android.application"
 
 android {
-    compileSdkVersion compileSdkVersion // Use the value from the `ext` block
-    buildToolsVersion buildToolsVersion // Use the value from the `ext` block
+    namespace 'com.Drywich.myapp'
+    compileSdkVersion rootProject.ext.compileSdkVersion // Use the value from the `ext` block
+    buildToolsVersion rootProject.ext.buildToolsVersion // Use the value from the `ext` block
 
     defaultConfig {
         applicationId "com.Drywich.myapp"
-        minSdkVersion minSdkVersion // Use the value from the `ext` block
-        targetSdkVersion targetSdkVersion // Use the value from the `ext` block
+        minSdkVersion rootProject.ext.minSdkVersion // Use the value from the `ext` block
+        targetSdkVersion rootProject.ext.targetSdkVersion // Use the value from the `ext` block
         versionCode 1
         versionName "1.0"
     }
@@ -37,6 +38,16 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    ndkVersion rootProject.ext.ndkVersion // Use the value from the `ext` block
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
         }
     }
 }
